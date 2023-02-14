@@ -1,0 +1,151 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  This lesson will help refresh your knowledge of the
+  <var>
+   &lt;img&gt;
+  </var>
+  tag and how you can use it to embed images in webpages. 
+
+The
+  <var>
+   &lt;img&gt;
+  </var>
+  tag is used to add an image to a web page. The image’s address is specified using the src attribute. For example, if you wanted to embed an image file named photo.png, you can do that with the following HTML.
+  <var>
+   &lt;img src="photo.png"&gt;
+  </var>
+  You can also specify the width and height of the image using the width and height attributes. For example, if the width of the photo is 640 pixels and the height of the photo is 480 pixels, you can use the following HTML.
+  <var>
+   &lt;img src="photo.png" width="640" height="480"&gt;
+  </var>
+  It is important to note that you can set the image to a larger or smaller size and the web browser will automatically scale the image. For example, you can update the previous HTML to half the width and height and the image would shrink by 50%.
+  <var>
+   &lt;img src="photo.png" width="320" height="240"&gt;
+  </var>
+  One useful feature of rendering images in the web browser is that the web browser can automatically keep the correct ratio of width to height. So for example, if you want to scale the image by 50%, you can simply set the width attribute and the web browser will automatically calculate the height.
+  <var>
+   &lt;img src="photo.png" width="320"&gt;
+  </var>
+  But what happens if the photo doesn’t load? Perhaps the file was accidentally deleted, or you mistyped the file name. Luckily, the web browser has a way to display some text when the image fails to load. This is done using the alt attribute. For example, you can display the text My Profile Photo using the alt attribute in the previous HTML.
+  <var>
+   &lt;img src="photo.png" width="320" alt="My Profile Photo"&gt;
+  </var>
+  It is important to ensure that screen reader accessibility software can interpret images displayed in the web browser. To support this, the &lt;img&gt; tag is combined with the
+  <var>
+   &lt;figure&gt;
+  </var>
+  and
+  <var>
+   &lt;figcaption&gt;
+  </var>
+  tags to provide a description of the image. The
+  <var>
+   &lt;img&gt;
+  </var>
+  tag is added inside the
+  <var>
+   &lt;figure&gt;
+  </var>
+  tag and the
+  <var>
+   &lt;figcaption&gt;
+  </var>
+  is specified after it.
+ </p>
+ <pre language="html">&lt;figure&gt; 
+   &lt;img src="photo.png" width="320" alt="My Profile Photo"&gt; 
+   &lt;figcaption&gt;A photo of myself on a beach in 2015&lt;/figcaption&gt; 
+&lt;/figure&gt;</pre>
+ <p>
+  One last thing to note is that like videos and audio, the web browser only supports specific file types. These file types are:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    .APNG – Animated Portable Network Graphics
+   </p>
+  </li>
+  <li>
+   <p>
+    .AVIF – AV1 Image Format
+   </p>
+  </li>
+  <li>
+   <p>
+    .GIF – Graphics Interchange Format
+   </p>
+  </li>
+  <li>
+   <p>
+    .JPEG / .JPG – Joint Photographic Expert Group image format
+   </p>
+  </li>
+  <li>
+   <p>
+    .PNG – Portable Network Graphics
+   </p>
+  </li>
+  <li>
+   <p>
+    .SVG – Scalable Vector Graphics
+   </p>
+  </li>
+  <li>
+   <p>
+    .WEBP – Web Picture Format
+   </p>
+  </li>
+ </ul>
+ <p>
+  Images will be important as you build websites and ensuring they are accessible will provide a better user experience for all visitors.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

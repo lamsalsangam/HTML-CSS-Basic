@@ -1,0 +1,242 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  As you build a website, the complexity of the code might increase to such a point that more than one CSS rule is applied to the same element. Or, you might accidentally add more than one rule over the same element. This results in conflicts as only one rule can be applied to a specific property. For example, the color of a certain p tag can either be blue or white, but not both. CSS engines use something called specificity to resolve these conflicts. Specificity is the ranking or score that helps CSS determine the final rule that will be applied to a given element.
+ </p>
+ <p>
+  This reading will help you grasp how the element with the ‘highest’ specificity is selected by CSS. But before you read on, it is important to note that these rules only apply in cases where conflicts arise for the properties.
+ </p>
+ <h2 level="2" variant="h2semibold">
+  Specificity hierarchy
+ </h2>
+ <p>
+  CSS has a set of rules that it uses to ‘score’ or assign a certain weight to selectors and this creates a specificity hierarchy. Based on the weights, there are four categories in this hierarchy:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Inline styles
+   </p>
+  </li>
+ </ul>
+ <ul bullettype="bullets">
+  <li aria-level="1" aria-posinset="2">
+   <p>
+    IDs
+   </p>
+  </li>
+  <li aria-level="1" aria-posinset="3">
+   <p>
+    Classes, attributes, and pseudo-classes
+   </p>
+  </li>
+ </ul>
+ <ul bullettype="bullets">
+  <li aria-level="1" aria-posinset="1">
+   <p>
+    Elements and pseudo-elements
+   </p>
+  </li>
+ </ul>
+ <h3 level="3" variant="h3semibold">
+  Inline styles
+ </h3>
+ <p>
+  Inline styles are attached to the elements within your HTML code like with the ‘style’ attribute. inline styles have the highest specificity. That means that rules that are defined as inline styles will be applied irrespective of other rules.
+ </p>
+ <p>
+  For example, take these two rules that create a conflict in color styling for a p tag:
+ </p>
+ <pre language="css"> &lt;p style=“color: white;”&gt; 
+p{color: blue} </pre>
+ <p>
+  The p tag will be colored white because it is declared inside the inline tag.
+ </p>
+ <h3 level="3" variant="h3semibold">
+  IDs
+ </h3>
+ <p>
+  Next in the hierarchy are IDs and by now you know that they are represented by ‘#’.  For example:
+ </p>
+ <p>
+  #div
+ </p>
+ <h3 level="3" variant="h3semibold">
+  Classes, attributes, and pseudo-classes
+ </h3>
+ <p>
+  Classes, and the attributes inside the selectors, come next with what is called the pseudo-classes that you will soon learn more about.
+ </p>
+ <p>
+  For example:
+ </p>
+ <p>
+  <strong>
+   .my-class
+  </strong>
+ </p>
+ <p>
+  <strong>
+   p[“attribute”]
+  </strong>
+ </p>
+ <p>
+  <strong>
+   div:hover
+  </strong>
+ </p>
+ <h3 level="3" variant="h3semibold">
+  Elements and pseudo-elements
+ </h3>
+ <p>
+  Finally, elements and something you call pseudo-elements have the lowest position in the specificity hierarchy. You will learn more about pseudo-elements later in this lesson.
+ </p>
+ <h2 level="2" variant="h2semibold">
+  Calculating scores
+ </h2>
+ <p>
+  But by now you might wonder how is specificity calculated?
+ </p>
+ <p>
+  CSS uses the hierarchical model internally to calculate the specificity of the selectors used on a web page. But often as the size of CSS code increases, developers unavoidably face rule conflicts. In these cases, developers use the specificity hierarchy to calculate the precedence of CSS rules and to control the outcome of their web pages.
+ </p>
+ <p>
+  Let’s explore a practical example of how to determine the score of a few selectors.
+ </p>
+ <p>
+  <strong>
+   #hello {} will be 0100
+  </strong>
+ </p>
+ <p>
+  <strong>
+   div {} will be 0001 and
+  </strong>
+ </p>
+ <p>
+  <strong>
+   div p.foo {} will be 0012
+  </strong>
+ </p>
+ <p>
+  In the order stated above, the four categories will be assigned values 1000, 100, 10 and 1 with the element selectors having the lowest value of 1. These scores will be calculated respectively for each element present inside the selector. The total score for these elements is then calculated and the one with the highest value has the highest specificity.
+ </p>
+ <p>
+  Let’s explore a couple of examples for clarity. Take note that the properties and values are not included in these examples to keep the focus on the selectors only.
+ </p>
+ <h3 level="3" variant="h3bold">
+  Example 1
+ </h3>
+ <pre language="css">p {} 
+div p {}
+div p.foo {}</pre>
+ <p>
+  p  =&gt; 1 element =&gt;  0 0 0 1 =&gt; Score: 1
+ </p>
+ <p>
+  div p =&gt; 2 elements =&gt; 0 0 0 2 =&gt; Score: 2
+ </p>
+ <p>
+  div p.foo {} =&gt; 2 elements and 1 class selector =&gt; 0 0 1 2 =&gt; Score: 12
+ </p>
+ <p>
+  The third case has a total of 12 for the p tag and so has the highest specificity. The rules for the other two cases are then overridden and the rules inside the third case are applied.
+ </p>
+ <h3 level="3" variant="h3bold">
+  Example 2
+ </h3>
+ <p>
+  p#bar =&gt; 1 element &amp; 1 ID =&gt;  0 1 0 1 =&gt; Score: 101
+ </p>
+ <p>
+  p.foo =&gt; 1 element &amp; 1 class =&gt; 0 0 1 1 =&gt; Score: 11
+ </p>
+ <p>
+  p.p.foo =&gt; 1 element &amp; 2 class =&gt;  0 0 2 1 =&gt; Score: 21
+ </p>
+ <p>
+  By now it should be clear that the case containing ID has a much higher score and the rules inside it will be applied.
+ </p>
+ <p>
+  Once you learn about the different pseudo-classes, pseudo-elements, and wide range of selectors later in this section, it will be easy to see why understanding specificity is important.
+ </p>
+ <p>
+  While the weights assigned from the hierarchical structure help in a systematic approach, there are a few more guidelines and rules that become important especially in cases when the score for the different selectors is the same. Some of these are:
+ </p>
+ <ul bullettype="bullets">
+  <li aria-level="1" aria-posinset="1">
+   <p>
+    Every selector will have a score and place in the hierarchy
+   </p>
+  </li>
+  <li aria-level="1" aria-posinset="2">
+   <p>
+    In the case of selectors with equal specificity, the latest or last written rule is the one that will be applied
+   </p>
+  </li>
+  <li aria-level="1" aria-posinset="3">
+   <p>
+    In general, ID selector should be applied in cases where you need to be certain about a rule
+   </p>
+  </li>
+  <li aria-level="1" aria-posinset="4">
+   <p>
+    Universal selectors have zero specificity value
+   </p>
+  </li>
+ </ul>
+ <p>
+  This reading only gave you an overview of specificity, but you should know that it is a much broader topic and also the underlying basis on which CSS engines work. That's what the 'Cascading' in CSS means: the way in which CSS engines evaluate and apply the specificity rules is called ‘cascade’. Cascade is a type of small waterfall that falls in stages down the rocks and that is exactly how CSS behaves.
+ </p>
+ <p>
+  Don’t be too worried about applying what you’ve learned now, there are CSS specificity calculators available that can help you with determining the styling outcomes of your pages.
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

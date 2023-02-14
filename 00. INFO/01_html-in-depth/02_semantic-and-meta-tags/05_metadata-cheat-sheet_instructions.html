@@ -1,0 +1,182 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h2 level="2" variant="h2semibold">
+  HTML &lt;meta&gt; tags
+ </h2>
+ <p>
+  Earlier in the course, you learned about meta tags and how you can leverage them to convey information to search engines to better categorize your pages. We recommend that you keep this cheat sheet handy when building your web applications. The structure of a meta tag is as follows.
+  <strong>
+   Name
+  </strong>
+  The name of the property can be anything you like, although browsers usually expect a value they understand and can take an action upon. An example would be
+  <var>
+   &lt;meta name="author" content="name"&gt;
+  </var>
+  to state the author of the page.
+  <strong>
+   Content
+  </strong>
+  <strong>
+   <em>
+   </em>
+  </strong>
+  The content field specifies the property's value. For example, you can use
+  <var>
+   &lt;meta name="language" content="english"&gt;
+  </var>
+  , to specify the language of the webpage to search engines.
+  <strong>
+   Charset
+  </strong>
+  <strong>
+   <em>
+   </em>
+  </strong>
+  The charset is a special field that lets you specify the character encoding used for the page so that the browser can display it properly. The most frequently used is utf-8, and you would add it to your HTML header as follows:
+  <var>
+   &lt;meta charset="UTF-8"&gt;
+  </var>
+  <strong>
+   HTTP-equiv
+  </strong>
+  This field stands for HTTP equivalent, and it’s used to simulate HTTP response headers. This is rare to see, and it’s recommended to use HTTP headers over HTML http-equiv meta tags. For example, the next tag would instruct the browser to refresh the page every 30 minutes:
+  <var>
+   &lt;meta http-equiv="refresh" content="30"&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2semibold">
+  Basic meta tags (meta tags For SEO)
+ </h2>
+ <p>
+  <var>
+   &lt;meta name="description"/&gt;
+  </var>
+  provides a brief description of the web page
+  <var>
+   &lt;meta name=”title”/&gt;
+  </var>
+  specifies the title of the web page
+  <var>
+   &lt;meta name="author" content="name"&gt;
+  </var>
+  specifies the author of the web page
+  <var>
+   &lt;meta name="language" content="english"&gt;
+  </var>
+  specifies the language of the web page
+  <var>
+   &lt;meta name="robots" content="index,follow" /&gt;
+  </var>
+  tells search engines how to crawl or index a certain page
+  <var>
+   &lt;meta name="google"/&gt;
+  </var>
+  tells Google not to show the sitelinks search box for your page when showing search results
+  <var>
+   &lt;meta name="googlebot" content=”notranslate” /&gt;
+  </var>
+  tells Google you don’t want to provide an automatic translation for your page if the user uses a different language
+  <var>
+   &lt;meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" /&gt;
+  </var>
+  specifies the last modified date and time on which you have made certain changes
+  <var>
+   &lt;meta name="rating" content="safe for kids"&gt;
+  </var>
+  specifies the expected audience for your page
+  <var>
+   &lt;meta name="copyright" content="Copyright 2022"&gt;
+  </var>
+  specifies a Copyright
+ </p>
+ <h2 level="2" variant="h2semibold">
+  &lt;meta http-equiv="..."/&gt; tags
+ </h2>
+ <p>
+  <var>
+   &lt;meta http-equiv="content-type" content="text/html"&gt;
+  </var>
+  specifies the format of the document returned by the server
+  <var>
+   &lt;meta http-equiv="default-style"/&gt;
+  </var>
+  specifies the format of the styling document
+  <var>
+   &lt;meta http-equiv="refresh"/&gt;
+  </var>
+  specifies the duration of the page before it’s considered stale
+  <var>
+   &lt;meta http-equiv=”Content-language”/&gt;
+  </var>
+  specifies the language of the page
+  <var>
+   &lt;meta http-equiv="Cache-Control" content="no-cache"&gt;
+  </var>
+  instructs the browser how to cache your page
+ </p>
+ <h2 level="2" variant="h2semibold">
+  Responsive design/mobile meta tags
+ </h2>
+ <p>
+  <var>
+   &lt;meta name="format-detection" content="telephone=yes"/&gt;
+  </var>
+  indicates that telephone numbers should appear as hypertext links that can be clicked to make a phone call
+  <var>
+   &lt;meta name="HandheldFriendly" content="true"/&gt;
+  </var>
+  specifies that the page can be properly visualized on mobile devices
+  <var>
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+  </var>
+  specifies the area of the window in which web content can be seen
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

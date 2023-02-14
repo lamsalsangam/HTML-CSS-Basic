@@ -1,0 +1,130 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  The following code is an example solution for the previous exercise.
+ </p>
+ <p>
+  This code is placed inside the &lt;main&gt; element of index.html.
+ </p>
+ <pre language="html">&lt;form&gt;
+    &lt;div&gt;
+        &lt;label for="username"&gt;Username&lt;/label&gt;
+        &lt;input type="text" id="username" required minlength="2"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="password"&gt;Password&lt;/label&gt;
+        &lt;input type="password" id="password" required minlength="2"&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Log In&lt;/button&gt;
+&lt;/form&gt;</pre>
+ <p>
+  While reviewing the code, note the following items:
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    The label
+    <em>
+     for
+    </em>
+    attribute value matches the value of the
+    <em>
+     id
+    </em>
+    attribute on the corresponding input element
+   </p>
+  </li>
+  <li>
+   <p>
+    The
+    <em>
+     type
+    </em>
+    attribute is set to
+    <em>
+     text
+    </em>
+    for the username input
+   </p>
+  </li>
+  <li>
+   <p>
+    The
+    <em>
+     type
+    </em>
+    attribute is set to
+    <em>
+     password
+    </em>
+    for the password input
+   </p>
+  </li>
+  <li>
+   <p>
+    Each field has a
+    <em>
+     required
+    </em>
+    attribute to enable client-side validation which checks that the form is filled out by the user
+   </p>
+  </li>
+  <li>
+   <p>
+    Each field has a
+    <em>
+     minlength
+    </em>
+    attribute with its value set to 2. This enables client-side validation which will prompt the user if the content of the field is less than 2 characters.
+   </p>
+  </li>
+ </ul>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

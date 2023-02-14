@@ -1,0 +1,113 @@
+<meta charset="utf-8"/>
+<co-content>
+ <p>
+  When filling in HTML forms, we expect users to abide by certain rules, like using numbers when asked to, or properly formatting a URL or an email when needed. However, humans are prone to errors and in some cases, they may overlook some of the data they input. That’s why it’s important to ensure the shape of the data we expect in each field is correct. HTML form validation is a set of attributes we can add to form inputs to perform automatic validation on the user’s behalf. The most important attributes you’ll find yourself using for validation are the following.
+ </p>
+ <h2 level="2" variant="h2regular">
+  Required
+ </h2>
+ <p>
+  Denotes a mandatory input that the user can’t leave empty. It can be used with any input type, like password, radio, text and so on.
+  <var>
+   &lt;input type="text" id="firstName" name="firstName" required&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2regular">
+  Maxlength
+ </h2>
+ <p>
+  Specifies the maximum length of a text input, in other words, the maximum number of characters that can be entered for a specific field. If provided, it will prevent the user from entering more characters than the limit.
+  <var>
+   &lt;input type="text" id="description" name="description" maxlength="50"&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2regular">
+  Minlength
+ </h2>
+ <p>
+  Specifies the minimum length of a text input. If set, the input will not accept fewer characters than those specified.
+  <var>
+   &lt;input type="password" id="password" name="password" minlength="8"&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2regular">
+  Min and max attributes
+ </h2>
+ <p>
+  Determine the minimum and maximum values allowed for an input field. They are usually applied to numerical text inputs, range inputs or dates.
+  <var>
+   &lt;input type="number" id="quantity" name="quantity" min="1" max="10"&gt;
+  </var>
+  <var>
+   &lt;input type="range" id="volume" name="volume" min="1" max="100"&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2regular">
+  Multiple
+ </h2>
+ <p>
+  Indicates that the user can enter more than one value in a single input field. This attribute can only be used for email and file input types.
+  <var>
+   &lt;input type="file" id="gallery" name="gallery" multiple&gt;
+  </var>
+ </p>
+ <h2 level="2" variant="h2regular">
+  Pattern
+ </h2>
+ <p>
+  Defines a particular pattern that an input field value has to fulfill to be considered valid. This attribute expects a regular expression to specify the pattern. It works with text, date, search, URL, tel, email and password input types. For example, you can restrict phone numbers to be only from the UK.
+  <var>
+   &lt;input type="tel" id="phone" name="phone" pattern=”^(?:0|\+?44)(?:\d\s?){9,10}$” &gt;
+  </var>
+ </p>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
